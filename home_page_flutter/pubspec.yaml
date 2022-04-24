@@ -36,6 +36,11 @@ dependencies:
   cupertino_icons: ^1.0.2
   url_launcher: ^6.0.20
   flutter_linkify: ^5.0.2
+  font_awesome_flutter: ^8.8.1
+  table_calendar: ^3.0.5
+  syncfusion_flutter_calendar: ^20.1.50
+  firebase_core: ^1.12.0
+  modal_progress_hud: ^0.1.3
 
 dev_dependencies:
   flutter_test:
@@ -58,6 +63,16 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  assets:
+        - assets/amanda.jpg
+        - assets/finance.png
+        - assets/girl.jpeg
+        - assets/guy.jpg
+        - assets/male.png
+        - assets/people.png
+        - assets/profile.png
+        - assets/soccer.png
+        - assets/teacher.png
 
 
   # To add assets to your application, add an assets section, like this:

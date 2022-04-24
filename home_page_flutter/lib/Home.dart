@@ -1,9 +1,15 @@
+// ignore_for_file: import_of_legacy_library_into_null_safe
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+//import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:home_page_flutter/calendar.dart';
+import 'package:home_page_flutter/pages/home.dart';
+import 'package:home_page_flutter/updates.dart';
 import 'package:url_launcher/link.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import 'package:Project/Done_File/lib/main.dart';
+//import 'package:/Project/Done_File/lib/main.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -13,6 +19,10 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  late String StateUrl;
+
+  late String url;
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -80,7 +90,12 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                             TextButton(
                               onPressed: () {
-                                Navigator.pushNamed(context, 'calender');
+                                // Navigator.pushNamed(context, 'calender');
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => calendar()),
+                                );
                               },
                               child: const Text('Time Table'),
                             ),
@@ -97,7 +112,12 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                             TextButton(
                               onPressed: () {
-                                Navigator.pushNamed(context, 'homepage');
+                                // Navigator.pushNamed(context, 'homepage');
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => name()),
+                                );
                               },
                               child: const Text('Updates'),
                             ),
@@ -112,14 +132,17 @@ class _HomeScreenState extends State<HomeScreen> {
                               "https://www.himalayanuniversity.com/images/faculty.jpg",
                               height: 120,
                             ),
-                            Link(
-                                uri: Uri.parse('https://flutter.dev'),
-                                builder: (context, followLink) => MouseRegion(
-                                    cursor: SystemMouseCursors.click,
-                                    child: GestureDetector(
-                                      onTap: followLink,
-                                      child: const Text('Faculty Contacts'),
-                                    ))),
+                            TextButton(
+                              onPressed: () {
+                                // Navigator.pushNamed(context, 'homepage');
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => contacts()),
+                                );
+                              },
+                              child: const Text('Faculty Contacts'),
+                            ),
                           ],
                         ),
                       ),
